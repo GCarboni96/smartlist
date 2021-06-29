@@ -1,0 +1,4 @@
+,Limitación musculoesquelética permanente,2
+,Limitación musculoesquelética temporal,1
+,Limitación visual permanente,2
+,Limitación visual temporal,1

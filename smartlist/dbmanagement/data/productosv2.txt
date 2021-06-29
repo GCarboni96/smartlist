@@ -1,0 +1,18 @@
+;Zanahoria Bolsa 1Kg;https://i.imgur.com/flVtgjm.jpg;1;690;2;1
+;Cebolla Malla;https://i.imgur.com/qbqfVPB.jpg;1;790;2;1
+;Palta Hass Malla;https://i.imgur.com/QDo7zAh.png;0.7;2790;2;1 
+;Apio Mata;https://i.imgur.com/h2jNPrh.jpg;0.5;890;2;1
+;Nescafe Café Instantaneo Tradicion tarro;https://i.imgur.com/tduIDUS.png;0.4;7490;2;0.5
+;Sundown Vitamina D3 400 IU;https://i.imgur.com/i1HLOrr.jpg;0.4;9899;9;1
+;Manare Aceite de Coco Organico;https://i.imgur.com/gSXfKlm.jpg;0.5;9499;9;1
+;Gatorade Sacor Cool Blue;https://i.imgur.com/SKNj62E.jpg;0.5;1299;9;0
+;Heineken Pack Cervezas Lager 12 Latas;https://i.imgur.com/4XlcwOW.png;4;8890;1;0
+;La Crianza Hamburguesa Vacuno Mastodonte;https://i.imgur.com/4ZpDOBL.png;0.2;900;1;0.5
+;Leche en polvo Nido;https://i.imgur.com/SP2UPWU.jpg;1.5;6750;3;1
+;Pastas al bronce Moccagatta;https://i.imgur.com/RULsTGs.jpg;0.4;630;3;1
+;Geniol Adultos Paracetamol 500 mg 20 Comprimidos;https://i.imgur.com/ewc7PFP.png;0.1;990;7;1
+;Pyriped Ibuprofeno 400 mg 20 Cápsulas Blandas;https://i.imgur.com/y8YmV4C.jpg;0.2;2672;7;1
+;Aciclovir Crema;https://i.imgur.com/GWLTH8u.jpg;0.1;2090;8;1
+;Ajo aceite;https://i.imgur.com/SrQ7kPW.jpg;0.1;1090;8;1
+;Candado 40 mm laminado 2 unidades Odis;https://i.imgur.com/MFT3EPU.jpg;2;10590;10;0.5
+;Mascarilla Premium gris + Filtro PM 2,5 JusTech;https://i.imgur.com/3cI6jC6.jpg;0.1;4990;10;0.5

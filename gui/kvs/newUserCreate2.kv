@@ -1,0 +1,62 @@
+<NewUserCreate2Window>:
+    name: "newusercreate2"
+    group_code:group_code
+
+
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba:(56/255,163/255,165/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+        Label:
+            text:"[font=Arial] ¡Felicidades! Puedes \n agregar gente a tu grupo \n con la siguiente clave de \n invitación. [/font]"
+            markup: True
+            multiline: True
+            halign: 'left'
+            font_size: (root.width**2 + root.height**2) / 14**4
+            pos_hint: {"x":0.51, "top":0.8}
+            size_hint: 0, 0
+            color: 1,1,1,1
+
+        Label:
+            text:"[font=Arial] En caso de extravío, \n esta se encontrará \n disponible en la sección \n Opciones de la app. [/font]"
+            markup: True
+            multiline: True
+            halign: 'left'
+            font_size: (root.width**2 + root.height**2) / 14**4
+            pos_hint: {"x":0.5, "top":0.6}
+            size_hint: 0, 0
+            color: 1,1,1,1
+
+        CopyClickboardBut:
+            pos_hint: {"x": 0.1 , "top":0.48}
+            size_hint: 0.15, 0.15
+
+
+        TextInput:
+            id: group_code
+            font_size: (root.width**2 + root.height**2) / 14**4
+            multiline: False
+            pos_hint: {"x": 0.25 , "top":0.45}
+            size_hint: 0.6, 0.08
+            readonly: True
+            text: "nodata"
+
+
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.1}
+            size_hint: 0.4, 0.05
+            text: "[font=Arial]Iniciar sesión[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            background_color: 81/255,255/255,85/255,1
+            border: (16,16,16,16)
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"

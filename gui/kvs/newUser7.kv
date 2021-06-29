@@ -1,0 +1,68 @@
+<NewUser7Window>:
+    name: "newuser7"
+    factores_layout:factores_layout
+
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba:(241/255,228/255,232/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GoBackBut:
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+
+        Label:
+            text:"[font=Arial]¿Posee alguno de los\nsiguientes[/font] [b]factores de\nriesgo[/b] frente al COVID-19?[font=Arial]\n\nSi es así, marque las\ncasillas correspondientes\na los factores de riesgo\nque posea.[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.85}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+
+        BoxLayout:
+            pos_hint: {"top":0.7, "x":0.1}
+            size_hint: 0.8, 0.5
+            orientation: 'vertical'
+            padding: 10, 10
+            row_default_height: '400dp'
+            row_force_default: True
+            spacing: 10, 100
+
+
+            ScrollView:
+                pos_hint: {"y":0.65}
+
+                GridLayout:
+                    id:factores_layout
+                    height:self.minimum_height
+                    row_default_height: '80dp'
+                    row_force_default: True
+                    spacing:5
+                    cols:2
+                    size_hint_y: None
+                    pos_hint: {"x":0.05, "y":0.2}
+
+                    canvas.before:
+                        Color:
+                            rgba: (241/255,228/255,232/255,1)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.1}
+            size_hint: 0.4, 0.05
+            text: "[font=Arial]Siguiente[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            background_color: 81/255,255/255,85/255,1
+            border: (16,16,16,16)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.submit_info()

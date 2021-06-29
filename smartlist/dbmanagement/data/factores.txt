@@ -1,0 +1,19 @@
+,Cáncer,2
+,Enfermedad renal crónica,2
+,Obesidad,2
+,Enfermedad de células falciformes,2
+,Enfermedades cardíacas,2
+,Enfermedades cerebrovasculares,2
+,Enfermedades pulmonares crónicas,2
+,Diabetes,2
+,Asma,2
+,Embarazo,2
+,Hipertensión,2
+,Trasplante de órganos,2
+,Talasemia,1
+,Afecciones neurológicas,1
+,Enfermedad hepática,1
+,VIH,1
+,Consumo de tabaco,1
+,Síndrome de Down,1
+,Fibrosis quística,1

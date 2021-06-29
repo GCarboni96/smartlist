@@ -1,0 +1,430 @@
+<MenuComprasWindow>:
+    name: "menucompras"
+    group_name:group_name
+    user_name: user_name
+
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        GridLayout:
+            cols:2
+            spacing:50
+            padding: 40,0
+
+            pos_hint: {"top":1}
+            size_hint: 1, 0.1
+            canvas.before:
+                Color:
+                    rgba: (.1,.1,.1,1)
+                Line:
+                    width: 3
+                    rectangle: self.x-5,self.y-5,self.width+10, self.height+10
+
+            Label:
+                id: group_name
+                text:"[font=Arial]Villa Alemana 230[/font]"
+                markup: True
+                halign: 'left'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 15**4
+                color: 1,0,1,1
+                text_size: self.size
+
+            Label:
+                id: user_name
+                text:"[font=Arial]Humberto[/font]"
+                markup: True
+                halign: 'right'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 15**4
+                color: 1,0,1,1
+                text_size: self.size
+
+        BoxLayout:
+            pos_hint: {"top":0.9}
+            size_hint: 1, 0.75
+            orientation: 'vertical'
+            padding: 10, 10
+            row_default_height: '400dp'
+            row_force_default: True
+            spacing: 10, 100
+
+            Label:
+                text:"[b]Compras Actuales[/b]"
+                markup: True
+                halign: 'left'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 14**4
+                pos_hint: {"x":0.035, "top":1}
+                size_hint: 0.8, 0.1
+                color: 1,0,1,1
+                text_size: self.size
+
+            Button:
+                text:"[font=Arial]Anuncio Compra[/font]"
+                markup: True
+                halign: 'center'
+                font_size: (root.width**2 + root.height**2) / 14**4
+                pos_hint: {"x":0.2, "top":0.88}
+                size_hint: 0.6, 0.1
+                background_color: 1,0,1,1
+                on_release:
+                    app.root.current = "anuncio1"
+                    root.manager.transition.direction = "left"
+
+
+            ScrollView:
+                pos_hint: {"y":0.65}
+
+                GridLayout:
+                    cols:1
+                    size_hint_y: None
+                    height:self.minimum_height
+                    row_default_height: '180dp'
+                    row_force_default: True
+                    spacing: 0, 10
+                    padding: 16, 30
+
+                    FloatLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0,0,1,1)
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                        Button:
+                            size_hint: 1, 0.2
+                            text: "[font=Arial]ENCARGAR PRODUCTOS[/font]"
+                            markup: True
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            background_color: 1,0,1,1
+                            pos_hint: {"x":0,"y":0}
+                        GridLayout:
+                            cols:2
+                            rows:2
+                            pos_hint: {"x":0.05,"top":0.6}
+                            size_hint: 0.5, 0.4
+                            color: 1,0,1,1
+                            text_size: self.size
+                            spacing: 5, 10
+                            padding: 10, 10
+
+                            Label:
+                                text:"[b]Jumbo[/b]"
+                                markup: True
+                                halign: 'center'
+                                valign: 'center'
+                                font_size: (root.width**2 + root.height**2) / 16**4
+                                color: 1,0,1,1
+                                text_size: self.size
+                                canvas.before:
+                                    Color:
+                                        rgba: (1,1,0,1)
+                                    Rectangle:
+                                        pos: self.pos
+                                        size: self.size
+                            Label:
+                                text:"[b]Jumbo[/b]"
+                                markup: True
+                                halign: 'center'
+                                valign: 'center'
+                                font_size: (root.width**2 + root.height**2) / 16**4
+                                color: 1,0,1,1
+                                text_size: self.size
+                                canvas.before:
+                                    Color:
+                                        rgba: (1,1,0,1)
+                                    Rectangle:
+                                        pos: self.pos
+                                        size: self.size
+                            Label:
+                                text:"[b]Jumbo[/b]"
+                                markup: True
+                                halign: 'center'
+                                valign: 'center'
+                                font_size: (root.width**2 + root.height**2) / 16**4
+                                color: 1,0,1,1
+                                text_size: self.size
+                                canvas.before:
+                                    Color:
+                                        rgba: (1,1,0,1)
+                                    Rectangle:
+                                        pos: self.pos
+                                        size: self.size
+                            Label:
+                                text:"[b]Jumbo[/b]"
+                                markup: True
+                                halign: 'center'
+                                valign: 'center'
+                                font_size: (root.width**2 + root.height**2) / 16**4
+                                color: 1,0,1,1
+                                text_size: self.size
+                                canvas.before:
+                                    Color:
+                                        rgba: (1,1,0,1)
+                                    Rectangle:
+                                        pos: self.pos
+                                        size: self.size
+
+
+
+
+                        Label:
+                            text:"[b]Francisco Heere[/b]"
+                            markup: True
+                            halign: 'left'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"x":0.05,"top":0.95}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+
+
+                        Label:
+                            text:"[b]16:45[/b]"
+                            markup: True
+                            halign: 'right'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"right":0.95,"top":0.95}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+
+                        Label:
+                            text:"Tiendas:"
+                            markup: True
+                            halign: 'left'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"x":0.05,"top":0.75}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+
+
+                        Label:
+                            text:"Nro Encargos"
+                            markup: True
+                            halign: 'center'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"right":0.95,"top":0.75}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+
+                        Label:
+                            text:"3"
+                            markup: True
+                            halign: 'center'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 13**4
+                            pos_hint: {"right":0.95,"top":0.55}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+
+
+                    FloatLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0,0,1,1)
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+
+                        Label:
+                            text:"[b]Francisco Heere[/b]"
+                            markup: True
+                            halign: 'left'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"x":0.05,"top":0.95}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+
+                            canvas.before:
+                                Color:
+                                    rgba: (0,1,0,1)
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        Label:
+                            text:"[b]16:45[/b]"
+                            markup: True
+                            halign: 'right'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"right":0.95,"top":0.95}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+                            canvas.before:
+                                Color:
+                                    rgba: (1,0,0,1)
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                    FloatLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0,0,1,1)
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+
+                        Label:
+                            text:"[b]Francisco Heere[/b]"
+                            markup: True
+                            halign: 'left'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"x":0.05,"top":0.95}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+
+                            canvas.before:
+                                Color:
+                                    rgba: (0,1,0,1)
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        Label:
+                            text:"[b]16:45[/b]"
+                            markup: True
+                            halign: 'right'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"right":0.95,"top":0.95}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+                            canvas.before:
+                                Color:
+                                    rgba: (1,0,0,1)
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                    FloatLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0,0,1,1)
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+
+                        Label:
+                            text:"[b]Francisco Heere[/b]"
+                            markup: True
+                            halign: 'left'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"x":0.05,"top":0.95}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+
+                            canvas.before:
+                                Color:
+                                    rgba: (0,1,0,1)
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        Label:
+                            text:"[b]16:45[/b]"
+                            markup: True
+                            halign: 'right'
+                            valign: 'center'
+                            font_size: (root.width**2 + root.height**2) / 15**4
+                            pos_hint: {"right":0.95,"top":0.95}
+                            size_hint: 0.4, 0.2
+                            color: 1,0,1,1
+                            text_size: self.size
+                            canvas.before:
+                                Color:
+                                    rgba: (1,0,0,1)
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+
+
+
+        GridLayout:
+            cols:4
+            pos_hint: {"top":0.15}
+            size_hint: 1, 0.15
+            canvas.before:
+                Color:
+                    rgba: (.1,.1,.1,1)
+                Line:
+                    width: 3
+                    rectangle: self.x-5,self.y-5,self.width+10, self.height+8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            GrupoBut:
+                Label:
+                    text:"[b]Grupo[/b]"
+                    markup: True
+                    halign: 'center'
+                    valign: 'center'
+                    font_size: (root.width**2 + root.height**2) / 15**4
+                    y: self.parent.y + self.parent.height * .3 - self.height * .7
+                    x: self.parent.x + self.parent.width * .5 - self.width * .5
+                    color: 1,0,0,1
+                    text_size: self.size
+
+
+
+            ComprasBut:
+                disabled: True
+                background_normal: ''
+                background_disabled_normal: self.background_normal
+
+                Label:
+                    text:"[b]Compras[/b]"
+                    markup: True
+                    halign: 'center'
+                    valign: 'center'
+                    font_size: (root.width**2 + root.height**2) / 15**4
+                    y: self.parent.y + self.parent.height * .3 - self.height * .7
+                    x: self.parent.x + self.parent.width * .5 - self.width * .5
+                    color: 1,0,0,1
+                    text_size: self.size
+
+
+
+            PedidosBut:
+                Label:
+                    text:"[b]Pedidos[/b]"
+                    markup: True
+                    halign: 'center'
+                    valign: 'center'
+                    font_size: (root.width**2 + root.height**2) / 15**4
+                    y: self.parent.y + self.parent.height * .3 - self.height * .7
+                    x: self.parent.x + self.parent.width * .5 - self.width * .5
+                    color: 1,0,0,1
+                    text_size: self.size
+
+
+            OpcionesBut:
+                Label:
+                    text:"[b]Opciones[/b]"
+                    markup: True
+                    halign: 'center'
+                    valign: 'center'
+                    font_size: (root.width**2 + root.height**2) / 15**4
+                    y: self.parent.y + self.parent.height * .3 - self.height * .7
+                    x: self.parent.x + self.parent.width * .5 - self.width * .5
+                    color: 1,0,0,1
+                    text_size: self.size

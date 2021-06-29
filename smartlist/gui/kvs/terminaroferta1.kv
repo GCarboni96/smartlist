@@ -1,0 +1,171 @@
+<TerminarOferta1Window>:
+    name: "terminaroferta1"
+    pedidos_grid:pedidos_grid
+    montoreal:montoreal
+    montomax:montomax
+    cantreal:cantreal
+    cantmax:cantmax
+    pesoreal:pesoreal
+    pesomax:pesomax
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba:(241/255,228/255,232/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+        BoxLayout:
+            pos_hint: {"top":0.9}
+            size_hint: 1, 0.6
+            orientation: 'vertical'
+            padding: 10, 10
+            row_default_height: '300dp'
+            row_force_default: True
+            spacing: 10, 100
+            FloatLayout:
+                size_hint: 1, 0.12
+                GoBackBut:
+                    pos_hint:{"x":-0.3,"y": 0.2}
+                    size_hint: 0.8, 0.8
+                    on_release:
+                        app.root.current = "menucompras"
+                        root.manager.transition.direction = "right"
+                Label:
+                    text:"[b]Pedidos:[/b]"
+                    markup: True
+                    halign: 'center'
+                    valign: 'center'
+                    font_size: (root.width**2 + root.height**2) / 13**4
+                    pos_hint: {"x":0, "y":0.3}
+                    size_hint: 1, 0.5
+                    color: 37/255,65/255,178/255,1
+                    text_size: self.size
+
+
+
+            BoxLayout:
+                pos_hint: {"top":0.9}
+                size_hint: 1, 0.6
+                orientation: 'vertical'
+                padding: 10, 10
+                row_default_height: '100dp'
+                row_force_default: True
+                spacing: 10, 100
+                canvas.before:
+                    Color:
+                        rgba: (56/255,163/255,165/255,1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                    Color:
+                        rgba: (.1,.1,.1,1)
+                    Line:
+                        width: 3
+                        rectangle: self.x,self.y,self.width, self.height
+
+                ScrollView:
+                    pos_hint: {"y":0.65}
+
+                    GridLayout:
+                        id: pedidos_grid
+                        cols:1
+                        size_hint_y: None
+                        height:self.minimum_height
+                        spacing: 0, 30
+                        padding: 16, 30
+
+        GridLayout:
+            cols:2
+            pos_hint: {"top":0.3}
+            size_hint: 1, 0.18
+
+            Label:
+                id: montoreal
+                text:"Monto total: $10200"
+                markup: True
+                halign: 'center'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 15**4
+                y: self.parent.y - self.parent.height * .35
+                x: self.parent.x + self.parent.width * .14
+                size_hint: 0.6, 1
+                color: 0,0,0,1
+                text_size: self.size
+            Label:
+                id: montomax
+                text:"Monto max: $10000"
+                markup: True
+                halign: 'center'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 15**4
+                y: self.parent.y - self.parent.height * .35
+                x: self.parent.x + self.parent.width * .14
+                size_hint: 0.6, 1
+                color: 0,0,0,1
+                text_size: self.size
+            Label:
+                id: cantreal
+                text:"Cantidad: 4"
+                markup: True
+                halign: 'center'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 15**4
+                y: self.parent.y - self.parent.height * .35
+                x: self.parent.x + self.parent.width * .14
+                size_hint: 0.6, 1
+                color: 0,0,0,1
+                text_size: self.size
+            Label:
+                id:cantmax
+                text:"Cant max: 10"
+                markup: True
+                halign: 'center'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 15**4
+                y: self.parent.y - self.parent.height * .35
+                x: self.parent.x + self.parent.width * .14
+                size_hint: 0.6, 1
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+            Label:
+                id:pesoreal
+                text:"Peso: 3.5kg"
+                markup: True
+                halign: 'center'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 15**4
+                y: self.parent.y - self.parent.height * .35
+                x: self.parent.x + self.parent.width * .14
+                size_hint: 0.6, 1
+                color: 0,0,0,1
+                text_size: self.size
+            Label:
+                id:pesomax
+                text:"Peso máximo: 10kg"
+                markup: True
+                halign: 'center'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 15**4
+                y: self.parent.y - self.parent.height * .35
+                x: self.parent.x + self.parent.width * .14
+                size_hint: 0.6, 1
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+
+        GridLayout:
+            cols:1
+            pos_hint: {"top":0.15}
+            size_hint: 1, 0.15
+            AnchorLayout:
+                Button:
+                    size_hint: 0.4, 0.3
+                    text: "[font=Arial]Terminar Anuncio[/font]"
+                    markup: True
+                    font_size: (root.width**2 + root.height**2) / 15**4
+                    background_color: 37/255,65/255,178/255,1
+                    on_release:
+                        root.manager.transition.direction = "left"
+                        root.confirm_list()

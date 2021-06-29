@@ -1,0 +1,3 @@
+123132;Carboni;Gianluca;Los Trapenses;Santiago
+953457;Carboni;Franco;Los pumas;Valparaíso
+123750;Mery;Francisca;Las Condes;Santiago

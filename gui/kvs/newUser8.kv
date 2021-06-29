@@ -1,0 +1,61 @@
+<NewUser8Window>:
+    name: "newuser8"
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba:(56/255,163/255,165/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GoBackBut:
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+
+
+        Label:
+            text:"[font=Arial]Si lo invitaron a usar la app\npara invitarlo a un grupo,\neliga la opción[/font] [b]Unirse a grupo[/b]"
+            markup: True
+            multiline: True
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.8}
+            size_hint: 0, 0
+            color: 1,1,1,1
+
+        Label:
+            text:"[font=Arial]De lo contrario, si desea crear\nsu propio grupo desde cero,\neliga la opción[/font] [b]Nuevo grupo[/b]"
+            markup: True
+            multiline: True
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.7}
+            size_hint: 0, 0
+            color: 1,1,1,1
+
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.5}
+            size_hint: 0.4, 0.05
+            text: "[font=Arial]Unirse a grupo[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            background_color: 37/255,65/255,178/255,1
+            border: (16,16,16,16)
+            on_release:
+                app.root.current = "newuserjoin1"
+                root.manager.transition.direction = "left"
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.4}
+            size_hint: 0.4, 0.05
+            text: "[font=Arial]Nuevo grupo[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            background_color: 37/255,65/255,178/255,1
+            border: (16,16,16,16)
+            on_release:
+                app.root.current = "newusercreate1"
+                root.manager.transition.direction = "left"

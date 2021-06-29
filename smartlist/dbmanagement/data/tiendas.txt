@@ -1,0 +1,12 @@
+,Líder,supermercado,https://upload.wikimedia.org/wikipedia/commons/2/22/L%C3%ADder_logo.svg
+,Jumbo,supermercado,https://upload.wikimedia.org/wikipedia/commons/d/d3/Logo_Jumbo_Cencosud.png
+,Unimarc,supermercado,https://upload.wikimedia.org/wikipedia/commons/1/1c/Unimarc_logo.svg
+,Tottus,supermercado,https://upload.wikimedia.org/wikipedia/commons/d/d4/Logo_Tottus.png
+,Santa Isabel,supermercado,https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Logo_Santa_Isabel_Cencosud_transparente.svg/1200px-Logo_Santa_Isabel_Cencosud_transparente.svg.png
+,Farmacias Ahumada,farmacia,https://www.u-zave.com/wp-content/uploads/2020/08/Farmacias-Ahumada-1.png
+,Cruz Verde,farmacia,https://upload.wikimedia.org/wikipedia/commons/5/5a/Logocv.png
+,Simi,farmacia,https://blog.doctorsimi.cl/wp-content/uploads/2019/12/Logo-principal-fondo2.png
+,Salcobrand,farmacia,https://www.mallsyoutletsvivo.cl/vivo-coquimbo/wp-content/uploads/sites/2/2018/06/salcobrand-600x600.png
+,Easy,ferretería,https://upload.wikimedia.org/wikipedia/commons/4/4d/Logo_Easy_Cencosud.jpg
+,Sodimac,ferretería,https://upload.wikimedia.org/wikipedia/commons/c/ca/Logo_Homecenter_Sodimac.png
+,Paris,ferretería,https://https://upload.wikimedia.org/wikipedia/commons/b/b2/Logo_Paris_Cencosud.png

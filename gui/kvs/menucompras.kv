@@ -1,0 +1,95 @@
+<MenuComprasWindow>:
+    name: "menucompras"
+    pedidos_grid:pedidos_grid
+    button_anuncio:button_anuncio
+    id:compras_screen
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba:(241/255,228/255,232/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+        BoxLayout:
+            pos_hint: {"top":0.9}
+            size_hint: 1, 0.75
+            orientation: 'vertical'
+            padding: 10, 10
+            row_default_height: '400dp'
+            row_force_default: True
+            spacing: 10, 100
+
+            Label:
+                text:"[b]Anuncios [/b]"
+                markup: True
+                halign: 'left'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 14**4
+                pos_hint: {"x":0.035, "top":1}
+                size_hint: 0.8, 0.1
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+
+            Button:
+                id:button_anuncio
+                text:"[font=Arial]Crear Anuncio[/font]"
+                markup: True
+                halign: 'center'
+                font_size: (root.width**2 + root.height**2) / 14**4
+                pos_hint: {"x":0.2, "top":0.88}
+                size_hint: 0.6, 0.1
+                background_color: 37/255,65/255,178/255,1
+                on_release:
+                    app.root.current = "anuncio1"
+                    root.manager.transition.direction = "left"
+
+
+            ScrollView:
+                pos_hint: {"y":0.65}
+
+                GridLayout:
+                    id:pedidos_grid
+                    cols:1
+                    size_hint_y: None
+                    height:self.minimum_height
+                    row_default_height: '180dp'
+                    row_force_default: True
+                    spacing: 0, 10
+                    padding: 16, 30
+
+
+        GridLayout:
+            cols:4
+            pos_hint: {"top":0.15}
+            size_hint: 1, 0.15
+            canvas.before:
+                Color:
+                    rgba: (.1,.1,.1,1)
+                Line:
+                    width: 3
+                    rectangle: self.x-5,self.y-5,self.width+10, self.height+8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            GrupoBut:
+
+
+
+
+            ComprasBut:
+                disabled: True
+                background_normal: ''
+                background_disabled_normal: self.background_normal
+
+
+
+
+            PedidosBut:
+
+
+
+            OpcionesBut:

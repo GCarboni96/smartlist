@@ -1,0 +1,7 @@
+CREATE TABLE Anuncios_X_Tiendas (
+    id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1, NO CACHE ),
+    tiendaid int,
+    anuncioid int,
+    CONSTRAINT FK_Anuncio FOREIGN KEY (anuncioid) REFERENCES ANUNCIOS(id),
+    CONSTRAINT FK_Tienda FOREIGN KEY (tiendaid) REFERENCES TIENDAS(id)
+);

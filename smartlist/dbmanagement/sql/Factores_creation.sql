@@ -1,0 +1,5 @@
+CREATE TABLE Factores (
+    id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1, NO CACHE ),
+    nombre varchar(255) NOT NULL,
+    nivel float DEFAULT 0.5
+);

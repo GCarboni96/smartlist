@@ -1,0 +1,38 @@
+<NewUserJoin2Window>:
+    name: "newuserjoin2"
+
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba:(56/255,163/255,165/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+
+        Label:
+            text:"[font=Arial] ¡Felicidades! Registro \n exitoso. [/font]"
+            markup: True
+            multiline: True
+            halign: 'left'
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.51, "top":0.5}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+
+
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.1}
+            size_hint: 0.4, 0.05
+            text: "[font=Arial]Iniciar sesión[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            background_color: 100/255,187/255,100/255,1
+            border: (16,16,16,16)
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"

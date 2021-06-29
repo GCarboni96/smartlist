@@ -1,0 +1,112 @@
+<NewUser3Window>:
+    name: "newuser3"
+    newuser_name: newuser_name
+    newuser_day: newuser_day
+    newuser_month: newuser_month
+    newuser_year: newuser_year
+
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba:(241/255,228/255,232/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GoBackBut:
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+
+
+        Label:
+            text:"[font=Arial]Ingrese su nombre:[/font]"
+            markup: True
+            multiline: True
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.5, "top":0.8}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+        TextInput:
+            id: newuser_name
+            font_size: (root.width**2 + root.height**2) / 13**4
+            multiline: False
+            pos_hint: {"x": 0.2 , "top":0.75}
+            size_hint: 0.6, 0.08
+
+        Label:
+            text:"[font=Arial]Ingrese su fecha\nde nacimiento:[/font]"
+            markup: True
+            multiline: True
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.5, "top":0.58}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+        Label:
+            text:"[font=Arial]Día: [/font]"
+            markup: True
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 14**4
+            pos_hint: {"x":0.23, "top":0.47}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+        TextInput:
+            id: newuser_day
+            font_size: (root.width**2 + root.height**2) / 13**4
+            multiline: False
+            pos_hint: {"x": 0.48 , "top":0.5}
+            size_hint: 0.12, 0.08
+            halign: 'center'
+
+        Label:
+            text:"[font=Arial]Mes: [/font]"
+            markup: True
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 14**4
+            pos_hint: {"x":0.23, "top":0.37}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+        TextInput:
+            id: newuser_month
+            font_size: (root.width**2 + root.height**2) / 13**4
+            multiline: False
+            pos_hint: {"x": 0.48 , "top":0.4}
+            size_hint: 0.12, 0.08
+            halign: 'center'
+
+        Label:
+            text:"[font=Arial]Año: [/font]"
+            markup: True
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 14**4
+            pos_hint: {"x":0.23, "top":0.27}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+        TextInput:
+            id: newuser_year
+            font_size: (root.width**2 + root.height**2) / 13**4
+            multiline: False
+            pos_hint: {"x": 0.4 , "top":0.3}
+            size_hint: 0.24, 0.08
+            halign: 'center'
+
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.1}
+            size_hint: 0.4, 0.05
+            text: "[font=Arial]Ok[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            background_color: 81/255,255/255,85/255,1
+            border: (16,16,16,16)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.submit_new_user_data()

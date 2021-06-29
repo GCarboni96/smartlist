@@ -1,0 +1,7 @@
+INSERT
+  INTO  "GRUPOS" ("NOMBRE","CLAVE","OWNERID")
+  VALUES(
+'TEST2',
+'iksuajdhnfiu',
+NULL
+);

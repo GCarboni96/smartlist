@@ -1,0 +1,12 @@
+,Líder,supermercado,https://i.imgur.com/6UbdgMP.gif
+,Jumbo,supermercado,https://i.imgur.com/SXk2btz.png?1
+,Unimarc,supermercado,https://i.imgur.com/2LpX9Ka.png
+,Tottus,supermercado,https://i.imgur.com/l2byP78.png
+,Santa Isabel,supermercado,https://i.imgur.com/NcANzEU.png
+,Farmacias Ahumada,farmacia,https://i.imgur.com/RT5uyog.jpg
+,Cruz Verde,farmacia,https://i.imgur.com/UjH3RFX.gif
+,Simi,farmacia,https://i.imgur.com/5VTv94y.png
+,Salcobrand,farmacia,https://i.imgur.com/ffcQTaz.gif
+,Easy,ferretería,https://i.imgur.com/LuQxoTp.png?2
+,Sodimac,ferretería,https://i.imgur.com/pZsAjso.png
+,Paris,ferretería,https://i.imgur.com/Af4VW7P.png?2

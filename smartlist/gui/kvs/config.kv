@@ -1,0 +1,2844 @@
+<GoBackBut@Button>:
+    pos_hint:{"x":0.05,"top":0.92}
+    size_hint: 0.1, 0.05
+    text: ""
+    markup: True
+    font_size: (root.width**2 + root.height**2) / 16**4
+    background_color: 1,1,1,0
+    border: (16,16,16,16)
+    Image:
+        source: 'icons/arrow-up.png'
+        width: self.parent.width
+        height: self.parent.height
+        y: self.parent.y
+        x: self.parent.x
+        canvas.before:
+            PushMatrix
+            Rotate:
+                angle: 90
+                origin: self.center
+        canvas.after:
+            PopMatrix
+
+<LoadingGifPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,0
+    overlay_color:1,1,1,1
+    auto_dismiss:False
+    FloatLayout:
+        Image:
+            source: 'gifs/loading3.gif'
+            width: self.parent.width
+            height: self.parent.height
+            y: self.parent.y
+            x: self.parent.x
+            anim_delay:0
+
+
+
+
+
+
+
+
+
+<MisPedidosHelpBut>:
+    markup: True
+    font_size: (root.width**2 + root.height**2) / 16**4
+    background_color: 1,1,1,0
+    border: (16,16,16,16)
+    Image:
+        source: 'icons/information.png'
+        width: self.parent.width
+        height: self.parent.height
+        y: self.parent.y
+        x: self.parent.x
+
+
+<CarroBut>:
+    cant:cant
+    markup: True
+    font_size: (root.width**2 + root.height**2) / 16**4
+    background_color: 1,1,1,0
+    border: (16,16,16,16)
+    Image:
+        source: 'icons/cart.png'
+        width: self.parent.width
+        height: self.parent.height
+        y: self.parent.y
+        x: self.parent.x
+    Label:
+        id:cant
+        text:"0"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y + self.parent.height * .58 - self.height * .42
+        x: self.parent.x + self.parent.width * .505 - self.width * .485
+        color: 1,1,1,1
+        text_size: self.size
+
+
+<GrupoBut@MenuButton>:
+    on_release:
+        root.go_to_menugrupo()
+
+    background_color: 37/255,65/255,178/255,1
+    Image:
+        source: 'icons/multiple-users-silhouette-color.png'
+        pos: self.parent.pos
+        width: self.parent.width*.8
+        height: self.parent.height*.8
+        y: self.parent.y + self.parent.height * .55 - self.height * .45
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+    Label:
+        text:"[b]Grupo[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 6.5**4
+        y: self.parent.y + self.parent.height * .3 - self.height * .7
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+        color: 1,1,1,1
+        disabled_color: 1,1,1,1
+        text_size: self.size
+
+
+<ComprasBut@MenuButton>:
+    background_color: 37/255,65/255,178/255,1
+    on_release:
+        root.go_to_menucompras()
+    Image:
+        source: 'icons/cart-color.png'
+        width: self.parent.width*.7
+        height: self.parent.height*.7
+        y: self.parent.y + self.parent.height * .55 - self.height * .45
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+    Label:
+        text:"[b]Anuncios[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 6.5**4
+        y: self.parent.y + self.parent.height * .3 - self.height * .7
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+        color: 1,1,1,1
+        disabled_color: 1,1,1,1
+        text_size: self.size
+
+
+
+<PedidosBut@MenuButton>:
+    background_color: 37/255,65/255,178/255,1
+    on_release:
+        root.go_to_menupedidos()
+    Image:
+        source: 'icons/shopping-bag-color.png'
+        width: self.parent.width*.7
+        height: self.parent.height*.7
+        y: self.parent.y + self.parent.height * .58 - self.height * .42
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+    Label:
+        text:"[b]Pedidos[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 6.5**4
+        y: self.parent.y + self.parent.height * .3 - self.height * .7
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+        color: 1,1,1,1
+        disabled_color: 1,1,1,1
+        text_size: self.size
+
+
+<OpcionesBut@MenuButton>:
+    background_color: 37/255,65/255,178/255,1
+    on_release:
+        root.go_to_menuopciones()
+    Image:
+        source: 'icons/gear-color.png'
+        pos: self.parent.pos
+        width: self.parent.width*.7
+        height: self.parent.height*.7
+        y: self.parent.y + self.parent.height * .55 - self.height * .45
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+    Label:
+        text:"[b]Opciones[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 6.5**4
+        y: self.parent.y + self.parent.height * .3 - self.height * .7
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+        color: 1,1,1,1
+        disabled_color: 1,1,1,1
+        text_size: self.size
+
+<EstadoPedidoAComprarImg@Image>
+    source: 'icons/run.png'
+    width: self.parent.width*.7
+    height: self.parent.height*.7
+    y: self.parent.y + self.parent.height * .5 - self.height * .5
+    x: self.parent.x + self.parent.width * .5 - self.width * .5
+
+<EstadoPedidoEnEsperaImg@Image>
+    source: 'icons/hourglass.png'
+    width: self.parent.width*.7
+    height: self.parent.height*.7
+    y: self.parent.y + self.parent.height * .5 - self.height * .5
+    x: self.parent.x + self.parent.width * .5 - self.width * .5
+<EstadoPedidoCompradoImg@Image>
+    source: 'icons/checked.png'
+    width: self.parent.width*.7
+    height: self.parent.height*.7
+    y: self.parent.y + self.parent.height * .5 - self.height * .5
+    x: self.parent.x + self.parent.width * .5 - self.width * .5
+
+<EstadoPedidoEliminadoImg@Image>
+    source: 'icons/delete.png'
+    width: self.parent.width*.7
+    height: self.parent.height*.7
+    y: self.parent.y + self.parent.height * .5 - self.height * .5
+    x: self.parent.x + self.parent.width * .5 - self.width * .5
+
+
+
+<MisPedidosBut@MenuPedidosButton>:
+    text: "Mis Pedidos"
+    markup: True
+    font_size: (root.width**2 + root.height**2) / 6**4
+    background_color: 37/255,65/255,178/255,1
+    border: (16,16,16,16)
+    color: 1,1,1,1
+    disabled_color: 1,1,1,1
+
+    on_release:
+        root.go_to_menupedidos_a()
+<PedidosPorComprarBut@MenuPedidosButton>:
+    text: "Productos por\nComprar"
+    markup: True
+    multiline: True
+    halign: "center"
+    font_size: (root.width**2 + root.height**2) / 6**4
+    background_color: 37/255,65/255,178/255,1
+    border: (16,16,16,16)
+    color: 1,1,1,1
+    disabled_color: 1,1,1,1
+    on_release:
+        root.go_to_menupedidos_b()
+<CobrosBut@MenuPedidosButton>:
+    text: "Cobros"
+    markup: True
+    font_size: (root.width**2 + root.height**2) / 6**4
+    background_color: 37/255,65/255,178/255,1
+    border: (16,16,16,16)
+    color: 1,1,1,1
+    disabled_color: 1,1,1,1
+    on_release:
+        root.go_to_menupedidos_c()
+
+<EncargarProductosButton>:
+    on_release:
+        root.go_to_encargo()
+<TerminarOfertaButton>:
+    on_release:
+        root.go_to_oferta()
+
+<ProductoClickButton>:
+    on_release:
+        root.pop_up_producto()
+
+<CopyClickboardBut@Button>:
+    text: ""
+    markup: True
+    font_size: (root.width**2 + root.height**2) / 16**4
+    background_color: 1,1,1,0
+    border: (16,16,16,16)
+    Image:
+        source: 'icons/copy.png'
+        width: self.parent.width
+        height: self.parent.height
+        y: self.parent.y + self.parent.height * .55 - self.height * .45
+        x: self.parent.x
+
+<DeleteBut@Button>:
+    background_color: 1,0,1,1
+    Image:
+        source: 'icons/trash.png'
+        pos: self.parent.pos
+        width: self.parent.width
+        height: self.parent.height
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+<PlusBut@Button>:
+    background_color: 1,1,1,0
+    Image:
+        source: 'icons/add.png'
+        pos: self.parent.pos
+        width: self.parent.width
+        height: self.parent.height
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+
+<MinusBut@Button>:
+    background_color: 1,1,1,0
+    Image:
+        source: 'icons/minus.png'
+        pos: self.parent.pos
+        width: self.parent.width
+        height: self.parent.height
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+
+<ConfirmBut@Button>:
+    background_color: 1,1,1,0
+    Image:
+        source: 'icons/check.png'
+        pos: self.parent.pos
+        width: self.parent.width
+        height: self.parent.height
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+
+<DeclineBut@Button>:
+    background_color: 1,1,1,0
+    Image:
+        source: 'icons/close.png'
+        pos: self.parent.pos
+        width: self.parent.width
+        height: self.parent.height
+        x: self.parent.x + self.parent.width * .5 - self.width * .5
+
+
+<TerminarComprasEnTiendaButton>:
+    size_hint: 0.9, 0.8
+    text: "[font=Arial]TERMINAR COMPRAS EN TIENDA[/font]"
+    markup: True
+    font_size: (root.width**2 + root.height**2) / 10**4
+    background_color: 37/255,65/255,178/255,1
+    pos_hint:{"x":0.05,"y": 0.1}
+
+    on_release:
+        root.go_to_terminar_compras()
+
+
+<TerminarCobrosSolicitanteButton>:
+    size_hint: 0.9, 0.8
+
+    pos_hint:{"x":0.05,"y": 0.1}
+    text: "[font=Arial]PRODUCTOS COBRADOS[/font]"
+    markup: True
+    font_size: (root.width**2 + root.height**2) / 10**4
+    background_color: 37/255,65/255,178/255,1
+
+
+    on_release:
+        root.end_cobros()
+
+#PARA TABLA DE FACTORES Y CONDICIONES
+<TableLabelTituloA>:
+    size_hint_y: 1
+    size_hint_x: 1.25
+    text_size: self.size
+    valign:'middle'
+    halign:'center'
+
+    color: 1,1,1,1
+    markup: True
+    multiline: False
+    background_color: 37/255,65/255,178/255,1
+    font_size: (root.width**2 + root.height**2) / 7.5**4
+
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+#PARA TABLA DE FACTORES Y CONDICIONES
+<TableLabelTituloB>:
+    size_hint_y: 1
+    size_hint_x: 0.75
+    text_size: self.size
+    valign:'middle'
+    halign:'center'
+
+    color: 1,1,1,1
+    markup: True
+    multiline: False
+    background_color: 37/255,65/255,178/255,1
+    font_size: (root.width**2 + root.height**2) / 6**4
+
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+#PARA TABLA DE USUARIOS EN MENU DE GRUPO
+<TableLabelTituloUsuario>:
+    size_hint_y: None
+    color: 1,1,1,1
+    markup: True
+    multiline: False
+    background_color: 37/255,65/255,178/255,1
+    size_hint: 1,1
+    font_size: (root.width**2 + root.height**2) / 7**4
+
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+#PARA USUARIOS
+<TableLabelUsuario>:
+    size_hint_x: 1
+    size_hint_y: 1
+    color: 1,1,1,1
+    markup: True
+    multiline: False
+    background_color: 56/255,163/255,165/255,1
+
+    text_size: self.size
+    halign: 'center'
+    valign: 'middle'
+    font_size: (root.width**2 + root.height**2) / 7**4
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+#PARA CONDICIONES Y ENFERMEDADES
+<TableLabel>:
+    size_hint_x: 1.25
+    size_hint_y: 1
+    color: 1,1,1,1
+    markup: True
+    multiline: False
+    background_color: 56/255,163/255,165/255,1
+    text_size: self.size
+    halign: 'center'
+    valign: 'middle'
+    font_size: (root.width**2 + root.height**2) / 7.5**4
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<TableCheck>:
+    size_hint_x: 0.75
+    color: 0,0,0,1
+    background_color: 56/255,163/255,165/255,1
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+#LAYOUT QUE VA ARRIBA DE LÑA PANTALLA CON NOMBRES DE USUSARIO Y GRUPO
+<TopScreenLayout>:
+    group_name:group_name
+    user_name: user_name
+    cols:2
+    spacing:50
+    padding: 40,0
+
+    pos_hint: {"top":1}
+    size_hint: 1, 0.1
+    canvas.before:
+        Color:
+            rgba: (.1,.1,.1,1)
+        Line:
+            width: 3
+            rectangle: self.x-5,self.y,self.width+10, self.height+10
+        Color:
+            rgba: (56/255,163/255,165/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id: group_name
+        text:"[font=Arial]Villa Alemana 230[/font]"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 10.5**4
+        color: 1,1,1,1
+        text_size: self.size
+
+    Label:
+        id: user_name
+        text:"[font=Arial]Humberto[/font]"
+        markup: True
+        halign: 'right'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 10.5**4
+        color: 1,1,1,1
+        text_size: self.size
+
+#SE ENCARGA DE CARGAR LA COMPRA DE OTROS MIEMBROS DE MI GRUPO
+<PedidoLayout>:
+    comprador_nombre:comprador_nombre
+    hora_anuncio:hora_anuncio
+    tiendas_grid:tiendas_grid
+    button:button
+    canvas.before:
+        Color:
+            rgba: (56/255,163/255,165/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    EncargarProductosButton:
+        id:button
+        size_hint: 1, 0.2
+        text: "[font=Arial]ENCARGAR PRODUCTOS[/font]"
+        markup: True
+        font_size: (root.width**2 + root.height**2) / 11**4
+        background_color: 37/255,65/255,178/255,1
+        pos_hint: {"x":0,"y":0}
+
+    GridLayout:
+        id:tiendas_grid
+        cols:2
+        rows:2
+        pos_hint: {"x":0.05,"top":0.6}
+        size_hint: 0.5, 0.4
+        color: 244/255,208/255,111/255,1
+        text_size: self.size
+        spacing: 5, 10
+        padding: 10, 10
+
+    Label:
+        id: comprador_nombre
+        text:"[b]Francisco Heere[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        pos_hint: {"x":0.05,"top":0.95}
+        size_hint: 0.4, 0.2
+        color: 1,1,1,1
+        text_size: self.size
+
+
+    Label:
+        id: hora_anuncio
+        text:"[b]16:45[/b]"
+        markup: True
+        halign: 'right'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        pos_hint: {"right":0.95,"top":0.95}
+        size_hint: 0.4, 0.2
+        color: 1,1,1,1
+        text_size: self.size
+
+    Label:
+        text:"Tiendas:"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        pos_hint: {"x":0.05,"top":0.75}
+        size_hint: 0.4, 0.2
+        color: 1,1,1,1
+        text_size: self.size
+
+#SE ENCARGA DE CARGAR MI COMPRA EN LA SECCION COMPRAS
+<MiPedidoLayout>:
+    comprador_nombre:comprador_nombre
+    hora_anuncio:hora_anuncio
+    tiendas_grid:tiendas_grid
+    button:button
+    canvas.before:
+        Color:
+            rgba: (56/255,163/255,165/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    TerminarOfertaButton:
+        id:button
+        size_hint: 1, 0.2
+        text: "[font=Arial]TERMINAR ANUNCIO[/font]"
+        markup: True
+        font_size: (root.width**2 + root.height**2) / 11**4
+        background_color: 141/255,233/255,105/255,1
+        pos_hint: {"x":0,"y":0}
+    GridLayout:
+        id:tiendas_grid
+        cols:2
+        rows:2
+        pos_hint: {"x":0.05,"top":0.6}
+        size_hint: 0.5, 0.4
+        color: 244/255,208/255,111/255,1
+        text_size: self.size
+        spacing: 5, 10
+        padding: 10, 10
+
+
+
+    Label:
+        id: comprador_nombre
+        text:"[b]Mi Anuncio[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        pos_hint: {"x":0.05,"top":0.95}
+        size_hint: 0.4, 0.2
+        color: 1,1,1,1
+        text_size: self.size
+
+
+    Label:
+        id: hora_anuncio
+        text:"[b]16:45[/b]"
+        markup: True
+        halign: 'right'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        pos_hint: {"right":0.95,"top":0.95}
+        size_hint: 0.4, 0.2
+        color: 1,1,1,1
+        text_size: self.size
+
+    Label:
+        text:"Tiendas:"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        pos_hint: {"x":0.05,"top":0.75}
+        size_hint: 0.4, 0.2
+        color: 1,1,1,1
+        text_size: self.size
+
+
+
+
+#MENSAJE QUE SE MUESTRA EN COMPRAS CUANDO NADIE ESTA COMPRANDO
+<NoAnuncios>:
+    text:"[font=Arial]Nadie esta realizando compras en\neste momento. Anuncia que vas a\ncomprar con el botón[/font] [b]Crear Anuncio[/b]."
+    markup: True
+    multiline: True
+    halign: 'left'
+    font_size: (root.width**2 + root.height**2) / 10**4
+    color: 0,0,0,1
+
+#MENSAJE QUE SE MUESTRA EN MIS PEDIDOS CUANDO NO HE PEDIDO NADA
+<NoMisPedidos>:
+    text:"No estás realizando pedidos actualmente."
+    markup: True
+    multiline: True
+    halign: 'center'
+    font_size: (root.width**2 + root.height**2) / 10**4
+    color: 0,0,0,1
+
+#MENSAJE QUE SE MUESTRA EN PEDIDOS POR COMPRAR CUANDO NO DEBO COMPRAR NADA
+<NoPedidosPorComprar>:
+    text:"No tienes productos por comprar actualmente."
+    markup: True
+    multiline: True
+    halign: 'center'
+    font_size: (root.width**2 + root.height**2) / 10**4
+    color: 0,0,0,1
+
+#MENSAJE QUE SE MUESTRA AL FINALIZAR UNA OFERTA CUANDO NO TE PIDEN NADA
+<NoPedidosRecibidos>:
+    text:"Nadie ha realizado encargos."
+    markup: True
+    multiline: True
+    valign: 'top'
+    halign: 'center'
+    font_size: (root.width**2 + root.height**2) / 10**4
+    color: 1,1,1,1
+    pos_hint: {"top":0.5}
+
+#MENSAJE QUE SE MUESTRA EN COBROS CUANDO NO DEBO COBRAR NADA
+<NoCobros>:
+    text:"No tienes pedidos pendientes por cobrar."
+    markup: True
+    multiline: True
+    halign: 'center'
+    font_size: (root.width**2 + root.height**2) / 10**4
+    color: 0,0,0,1
+
+#LABEL QUE APARECE DENTRO DE LAS COMRPAS PARA REPRESENTAR LAS TIENDAS QUE SE VISITAN EN LA SECIION COMPRAS
+<TiendaLabel>:
+    text:""
+    markup: True
+    halign: 'center'
+    valign: 'center'
+    font_size: (self.width*2 + self.height*2) / 2**4
+    color: 0,0,0,1
+    text_size: self.size
+    canvas.before:
+        Color:
+            rgba: (244/255,208/255,111/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+#LABEL INICIAL DE LA VENTANA PARA TERMINAR COMPRAS EN Tienda
+<TerminarComprasInitialLabel>:
+    text:"Ingrese los precios que pagó\npor cada producto:"
+    markup: True
+    halign: 'center'
+    valign: 'top'
+    font_size: (root.width**2 + root.height**2) / 10**4
+    color: 0,0,0,1
+    text_size: self.size
+
+#LABEL DE LA VENTANA PARA TERMINAR COMPRAS EN Tienda PARA INDICAR QUE HAY PRODUCTOS QUE NO FUERON SELECCIONADOS
+<TerminarComprasWarningLabel>:
+    text:"[b]Advertencia[/b]: Los siguientes productos\nserán eliminados de la lista"
+    markup: True
+    halign: 'center'
+    valign: 'top'
+    font_size: (root.width**2 + root.height**2) / 10**4
+    color: 240/255,58/255,71/255,1
+    text_size: self.size
+#CUANDO VOY A ENCARGAR, SON LAS TIENDAS QUE SE CARGAN EN LA LISTA JUNTO A SU RESPECTIVO CHECKBOX
+<TiendaForEncargoCheckBox1>:
+    allow_stretch: True
+    color: 0,0,0,1
+    background_color: 56/255,163/255,165/255,1
+    size_hint_x:0.5
+    canvas.before:
+        Color:
+            rgba: (.9,.9,.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+<TiendaForEncargoCheckBox2>:
+    allow_stretch: True
+    color: 0,0,0,1
+    background_color: 56/255,163/255,165/255,1
+    size_hint_x:0.5
+    canvas.before:
+        Color:
+            rgba: (.8,.8,.8,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<TiendaForEncargoLabel1>:
+    text:"tiendaa"
+    markup: True
+    halign: 'left'
+    valign: 'center'
+    font_size: (root.width**2 + root.height**2) / 6.5**4
+    pos_hint: {"x":0.1, "top":0.85}
+    size_hint: 0.9, 0.2
+    color: 0,0,0,1
+    text_size: self.size
+    canvas.before:
+        Color:
+            rgba: (.9,.9,.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+<TiendaForEncargoLabel2>:
+    text:""
+    markup: True
+    halign: 'left'
+    valign: 'center'
+    font_size: (root.width**2 + root.height**2) / 6.5**4
+    pos_hint: {"x":0.1, "top":0.85}
+    size_hint: 0.9, 0.2
+    color: 0,0,0,1
+    text_size: self.size
+    canvas.before:
+        Color:
+            rgba: (.8,.8,.8,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+#PARA LA PRIMERA COLUMNA DE LA TABLA DE PRODUCTOS SELECCIONADOS
+<TerminarComprasLabelA>:
+    text:""
+    markup: True
+    multiline: True
+    halign: 'center'
+    valign: 'top'
+    font_size: (root.width**2 + root.height**2) / 6.5**4
+    color: 37/255,65/255,178/255,1
+    text_size: self.size
+    size_hint_x: 1.5
+#PARA LA SEGUNDA COLUMNA DE LA TABLA DE PRODUCTOS SELECCIONADOS
+<TerminarComprasLabelB>:
+
+    text:""
+    markup: True
+    halign: 'center'
+    valign: 'top'
+    font_size: (root.width**2 + root.height**2) / 5**4
+    color: 37/255,65/255,178/255,1
+    text_size: self.size
+
+#PARA INGRESAR PRECIO REAL
+<TerminarComprasTextInput>:
+    id: ""
+    font_size: (root.width**2 + root.height**2) / 5**4
+    multiline: False
+    halign: 'center'
+    valign: 'top'
+    pos_hint_y: 1
+
+#PARA LA PRIMERA COLUMNA DE LA TABLA DE PRODUCTOS NO SELECCIONADOS
+<TerminarComprasLabelC>:
+    text:""
+    markup: True
+    halign: 'center'
+    valign: 'top'
+    font_size: (root.width**2 + root.height**2) / 8**4
+    color: 37/255,65/255,178/255,1
+    text_size: self.size
+    size_hint_x: 2
+
+#PARA LA SEGUNDA COLUMNA DE LA TABLA DE PRODUCTOS NO SELECCIONADOS
+<TerminarComprasLabelD>:
+    text:""
+    markup: True
+    halign: 'center'
+    valign: 'top'
+    font_size: (root.width**2 + root.height**2) / 5.5**4
+    color: 37/255,65/255,178/255,1
+    text_size: self.size
+
+
+#PARA LA PRIMERA COLUMNA DE LA TABLA DE PRODUCTOS/PEDIDOS POR COMPRAR
+<PedidosPorComprarLabelA>:
+    text:""
+    markup: True
+    multiline: True
+    halign: 'center'
+    valign: 'top'
+    font_size: (root.width**2 + root.height**2) / 5.5**4
+    color: 37/255,65/255,178/255,1
+    text_size: self.size
+    size_hint_x: 1
+
+#PARA INGRESAR PRECIO REAL
+<PedidosPorComprarTextInputPrecioLayout>:
+    size_hint_x: 1
+    size_hint_y: .75
+    TextInput:
+        id: ""
+        font_size: (root.width**2 + root.height**2) / 5**4
+        size_hint: 0.8, 0.8
+        multiline: False
+        halign: 'center'
+        valign: 'top'
+
+
+
+#PARA INGRESAR CANTIDAD REAL
+<PedidosPorComprarTextInputCantidadLayout>:
+    size_hint_x: 1
+    size_hint_y: .75
+    TextInput:
+        id: ""
+        font_size: (root.width**2 + root.height**2) / 5**4
+        size_hint: 0.8, 0.8
+        multiline: False
+        halign: 'center'
+        valign: 'top'
+
+
+#Check correspondientes a la seccion pedidos por comprar
+<PedidosPorComprarCheck>:
+    size_hint_x: 1
+    text: ""
+    allow_stretch: True
+    background_color: .9,.9,.9,1
+    color: 0,0,0,1
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+#LAYOUT QUE REPRESENTA A UN PRODUCTO A ELEGIR CUANDO ESTOY CREANDO MI ENCARGO/PEDIDO
+<ProductoLayout>:
+    button:button
+    img:img
+    logo:logo
+    nombre:nombre
+    detalles:detalles
+    pos_hint: {"x":0, "top":1}
+    size_hint: 1, 0.04
+    text_size: self.size
+    canvas.before:
+        Color:
+            rgba: (0/255,0/255,0/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    ProductoClickButton:
+        id:button
+        size_hint: 1,1
+        pos_hint: {"x":0, "top":1}
+        text: ""
+        markup: True
+        background_color: 0,0,0,0
+    AsyncImage:
+        id:img
+        source: "https://d1tjllbjmslitt.cloudfront.net/spree/products/19378/thumbnail/8940296.jpg?1538408382"
+        text:"[b]Imagen[/b]"
+        markup: True
+        allow_stretch: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 18**4
+        pos_hint: {"x":0, "top":1}
+        size_hint: 0.2, 1
+        text_size: self.size
+        canvas.before:
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    AsyncImage:
+        id:logo
+        source: "https://d1tjllbjmslitt.cloudfront.net/spree/products/19378/thumbnail/8940296.jpg?1538408382"
+        text:"[b]Imagen[/b]"
+        markup: True
+        allow_stretch: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 18**4
+        pos_hint: {"x":0.6, "y":0.2}
+        size_hint: 0.6, 0.7
+        text_size: self.size
+        canvas.before:
+            Color:
+                rgba: (0,0,0,0)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        id:nombre
+        text:"[b]Paracetamol 500 mg[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 9.5**4
+        pos_hint: {"x":0.22, "top":0.9}
+        size_hint: 0.6, 0.5
+        text_size: self.size
+        color: 1,1,1,1
+
+    Label:
+        id:detalles
+        text:"[b]De: Salcobrand[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 9.5**4
+        pos_hint: {"x":0.22, "top":0.45}
+        size_hint: 0.78, 0.5
+        text_size: self.size
+        color: 1,1,1,1
+
+#LAYOUT QUE REPRESENTA A UN PEDIDO EN EL CARRO DE PEDIDOS CUANDO ESTIY PIDIENDO DENTRO DE UN Anuncio
+<PedidoInCarroLayout>:
+    cantidad:cantidad
+    nombre:nombre
+    detalles:detalles
+    detalles2:detalles2
+    canvas.before:
+        Color:
+            rgba:(241/255,228/255,232/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id:cantidad
+        text:"[b]1[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 8**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .02
+        size_hint: 0.1, 1
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+    Label:
+        id:nombre
+        text:"[b]500 mg Paracetamol[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 9**4
+        y: self.parent.y + self.parent.height * .6
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.9, 0.4
+        color: 0,0,0,1
+        text_size: self.size
+    Label:
+        id:detalles
+        text:"$800 ($800/un) - Salcobrand"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 9**4
+        y: self.parent.y - self.parent.height * .2
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.8, 0.9
+        color: 0,0,0,1
+        text_size: self.size
+
+    Label:
+        id:detalles2
+        text:"$800 ($800/un) - Salcobrand"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 9**4
+        y: self.parent.y - self.parent.height * .5
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.8, 0.9
+        color: 0,0,0,1
+        text_size: self.size
+
+    Button:
+        id:delete_button
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .8
+        size_hint: 0.2, 1
+        markup: True
+        background_normal: ''
+        background_color: 1,0,0.2,1
+        border: (16,16,16,16)
+        on_release:
+            root.delete_pedido()
+        Image:
+            source: 'icons/trash.png'
+            width: self.parent.width
+            height: self.parent.height
+            y: self.parent.y
+            x: self.parent.x
+
+
+#LAYOUT QUE AGRUPA TODOS MIS PEDIDOS HACIA UN COMPRADOR EN MIS_PEDIDOS
+<MisPedidosGroupLayout>:
+    comprador:comprador
+    precio_total:precio_total
+    spacing: 3, 3
+    cols:1
+    size_hint_y: None
+    height:self.minimum_height
+    row_default_height: '75dp'
+    canvas.before:
+        Color:
+            rgba: (0.1,0.1,0.1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: (.1,.1,.1,1)
+        Line:
+            width: 3
+            rectangle: self.x,self.y,self.width, self.height
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (0.9,0.9,0.9,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            id:comprador
+            text:"[b]Comprador(a): Sofía[/b]"
+            markup: True
+            halign: 'left'
+            valign: 'center'
+            font_size: (root.width**2 + root.height**2) / 10**4
+            y: self.parent.y
+            x: self.parent.x + self.parent.width * .02
+            size_hint: 0.7, 1
+            color: 37/255,65/255,178/255,1
+            text_size: self.size
+
+        Label:
+            id:precio_total
+            text:"$3500"
+            markup: True
+            halign: 'right'
+            valign: 'center'
+            font_size: (root.width**2 + root.height**2) / 10**4
+            y: self.parent.y
+            x: self.parent.right - self.width - self.parent.width * .02
+            size_hint: 0.3, 1
+            color: 37/255,65/255,178/255,1
+            text_size: self.size
+#LAYOUT QUE REPRESENTA UNO DE MIS PEDIDOS
+<MisPedidosPedidoLayout>:
+    cantidad:cantidad
+    nombre:nombre
+    detalles:detalles
+    detalles2:detalles2
+    icon:icon
+    canvas.before:
+        Color:
+            rgba: (0.9,0.9,0.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id:cantidad
+        text:"[b]2[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 9**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .02
+        size_hint: 0.1, 1
+        color: 0,0,0,1
+        text_size: self.size
+
+    Label:
+        id:nombre
+        text:"[b]Kilo de Hallulla[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10.5**4
+        y: self.parent.y + self.parent.height * .55
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.6, 0.4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+    Label:
+        id:detalles
+        text:"$3500 ($1750/un)"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10.5**4
+        y: self.parent.y - self.parent.height * .4
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.8, 1
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+    Label:
+        id:detalles2
+        text:"Santa Isabel"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10.5**4
+        y: self.parent.y - self.parent.height * .7
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.8, 1
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+    AsyncImage:
+        id:icon
+        y: self.parent.y + self.parent.height * .1
+        x: self.parent.x + self.parent.width * .8
+        size_hint: 0.2, 0.8
+
+
+
+
+
+#LAYOUT QUE INDICA EL ESTADO DE MIS PEDIDOS (ABAJO DE LA LISTA DE ENCARGOS)
+#DEPRECATED
+<MisPedidosEstadoLayout>:
+    estado:estado
+    canvas.before:
+        Color:
+            rgba: (0.9,0.9,0.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        id:estado
+        text:"Estado: [b]Por Comprar[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y
+        x: self.parent.x
+        size_hint: 1, 1
+        color: 1,0,1,1
+        text_size: self.size
+
+#LAYOUT QUE AGRUPA TODOS MIS PEDIDOS HACIA UNA TIENDA CUANDO TERMINO OFERTA
+<TerminarOfertaGroupLayout>:
+    tienda:tienda
+    precio_total:precio_total
+    spacing: 3, 3
+    cols:1
+    size_hint_y: None
+    height:self.minimum_height
+    row_default_height: '75dp'
+    canvas.before:
+        Color:
+            rgba: (0.1,0.1,0.1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: (.1,.1,.1,1)
+        Line:
+            width: 3
+            rectangle: self.x,self.y,self.width, self.height
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (37/255,65/255,178/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            id:tienda
+
+            text:"[b]Tienda: Salcobrand[/b]"
+            markup: True
+            halign: 'left'
+            valign: 'center'
+            font_size: (root.width**2 + root.height**2) / 10**4
+            y: self.parent.y
+            x: self.parent.x + self.parent.width * .02
+            size_hint: 0.5, 1
+            color: 1,1,1,1
+            text_size: self.size
+
+        Label:
+            id:precio_total
+            text:"$3000"
+            markup: True
+            halign: 'right'
+            valign: 'center'
+            font_size: (root.width**2 + root.height**2) / 10**4
+            y: self.parent.y
+            x: self.parent.right - self.width - self.parent.width * .02
+            size_hint: 0.3, 1
+            color: 1,1,1,1
+            text_size: self.size
+#LAYOUT QUE DE UN PEDIDO DENTRO DEL MENU DE TERMINAR OFERTA
+<TerminarOfertaPedidoLayout>:
+    cantidad:cantidad
+    nombre:nombre
+    precio:precio
+    canvas.before:
+        Color:
+            rgba: (0.9,0.9,0.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id:cantidad
+        text:"[b]2[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 9**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .02
+        size_hint: 0.1, 1
+        color: 0,0,0,1
+        text_size: self.size
+
+    Label:
+        id:nombre
+        text:"[b]Pack Mascarillas[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y+ self.parent.height * .35
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.8, 0.5
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+    Label:
+        id:precio
+        text:"$3000 ($1500/un)"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 1, 0.5
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+#LAYOUT QUE REPRESENTA UNO O MAS PEDIDOS DENTRO DEL MENU DE TERMINAR OFERTA
+<TerminarOfertaPedidoAgroupedLayout>:
+    cantidad:cantidad
+    nombre:nombre
+    precio:precio
+    canvas.before:
+        Color:
+            rgba: (0.9,0.9,0.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id:cantidad
+        text:"[b]2[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 9**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .02
+        size_hint: 0.1, 1
+        color: 0,0,0,1
+        text_size: self.size
+
+    Label:
+        id:nombre
+        text:"[b]Pack Mascarillas[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y+ self.parent.height * .35
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.8, 0.5
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+    Label:
+        id:precio
+        text:"$3000 ($1500/un)"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 1, 0.5
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+
+#LAYOUT QUE AGRUPA TODOS MIS PEDIDOS HACIA UNA TIENDA EN PEDIDOS POR COMPRAR
+<PedidosPorComprarGroupLayout>:
+    tienda:tienda
+    precio_total:precio_total
+    spacing: 3, 3
+    cols:1
+    size_hint_y: None
+    height:self.minimum_height
+    row_default_height: '75dp'
+    canvas.before:
+        Color:
+            rgba: (0.1,0.1,0.1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: (.1,.1,.1,1)
+        Line:
+            width: 3
+            rectangle: self.x,self.y,self.width, self.height
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (0.9,0.9,0.9,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            id:tienda
+
+            text:"[b]Tienda: Salcobrand[/b]"
+            markup: True
+            halign: 'left'
+            valign: 'center'
+            font_size: (root.width**2 + root.height**2) / 11**4
+            y: self.parent.y
+            x: self.parent.x + self.parent.width * .02
+            size_hint: 0.7, 1
+            color: 37/255,65/255,178/255,1
+            text_size: self.size
+
+        Label:
+            id:precio_total
+            text:"$3000"
+            markup: True
+            halign: 'right'
+            valign: 'center'
+            font_size: (root.width**2 + root.height**2) / 11**4
+            y: self.parent.y
+            x: self.parent.right - self.width - self.parent.width * .02
+            size_hint: 0.3, 1
+            color: 37/255,65/255,178/255,1
+            text_size: self.size
+
+#LAYOUT QUE AGRUPA TODOS MIS COBROS HACIA UN SOLICITANTE
+<CobrosGroupLayout>:
+    solicitante:solicitante
+    precio_total:precio_total
+    spacing: 3, 3
+    cols:1
+    size_hint_y: None
+    height:self.minimum_height
+    row_default_height: '75dp'
+    canvas.before:
+        Color:
+            rgba: (0.1,0.1,0.1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: (.1,.1,.1,1)
+        Line:
+            width: 3
+            rectangle: self.x,self.y,self.width, self.height
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (0.9,0.9,0.9,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            id:solicitante
+
+            text:"[b]test[/b]"
+            markup: True
+            halign: 'left'
+            valign: 'center'
+            font_size: (root.width**2 + root.height**2) / 10**4
+            y: self.parent.y
+            x: self.parent.x + self.parent.width * .02
+            size_hint: 0.7, 1
+            color: 37/255,65/255,178/255,1
+            text_size: self.size
+
+        Label:
+            id:precio_total
+            text:"$3000"
+            markup: True
+            halign: 'right'
+            valign: 'center'
+            font_size: (root.width**2 + root.height**2) / 10**4
+            y: self.parent.y
+            x: self.parent.right - self.width - self.parent.width * .02
+            size_hint: 0.3, 1
+            color: 37/255,65/255,178/255,1
+            text_size: self.size
+
+#LAYOUT QUE DE UN PEDIDO DENTRO DEL MENU DE PEDIDOS POR COMPRAR
+<PedidosPorComprarPedidoLayout>:
+    cantidad:cantidad
+    nombre:nombre
+    precio:precio
+    solicitante:solicitante
+    check:check
+    canvas.before:
+        Color:
+            rgba: (0.9,0.9,0.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id:cantidad
+        text:"[b]2[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 9**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .02
+        size_hint: 0.1, 1
+        color: 0,0,0,1
+        text_size: self.size
+
+    Label:
+        id:nombre
+        text:"[b]Pack Mascarillas[/b]"
+        markup: True
+        multiline:False
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y + self.parent.height * .6
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.6, 0.4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+    Label:
+        id:precio
+        text:"$3000 ($1500/un)"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.6, 1
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+    Label:
+        id:solicitante
+        text:"Solicita: María"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y - self.parent.height * .35
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.6, 1
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+    PedidoCheck:
+        id:check
+        size_hint_x: .2
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .8
+
+#LAYOUT QUE DE UN COBRO DENTRO DEL MENU DE COBROS
+<CobrosPedidoLayout>:
+    cantidad:cantidad
+    nombre:nombre
+    precio:precio
+    tienda:tienda
+    canvas.before:
+        Color:
+            rgba: (0.9,0.9,0.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id:cantidad
+        text:"[b]2[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 9**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .02
+        size_hint: 0.1, 1
+        color: 0,0,0,1
+        text_size: self.size
+
+    Label:
+        id:nombre
+        text:"[b]Pack Mascarillas[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y + self.parent.height * .6
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.6, 0.4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+    Label:
+        id:precio
+        text:""
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.6, 1
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+    Label:
+        id:tienda
+        text:"test"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        y: self.parent.y - self.parent.height * .35
+        x: self.parent.x + self.parent.width * .14
+        size_hint: 0.6, 1
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+#LAYOUT QUE CONTIENE UN BOTON PARA TERMINAR COMPRAS
+<PedidosPorComprarTerminarTiendaLayout>:
+    canvas.before:
+        Color:
+            rgba: (0.9,0.9,0.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+#LAYOUT QUE CONTIENE a los agrouped pedidos en pedidos por comprar
+<PedidosPorComprarAgroupedPedidosLayout>:
+    cols:4
+    size_hint_y: None
+    height:self.minimum_height
+    spacing: 0, 15
+    padding: 16, 10
+    row_default_height: '60dp'
+
+    canvas.before:
+        Color:
+            rgba: (0.9,0.9,0.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text:"[b]Producto[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'middle'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+        size_hint_x: 1
+
+    Label:
+        text:"[b]Precio Real por unidad[/b]"
+        markup: True
+        multiline: True
+        halign: 'center'
+        valign: 'middle'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+        size_hint_x: 1
+
+    Label:
+        text:"[b]Cantidad final comprada[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'middle'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+        size_hint_x: 1
+    Label:
+        text:"[b]Comprado[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'middle'
+        font_size: (root.width**2 + root.height**2) / 11**4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+        size_hint_x: 1
+
+#LAYOUT QUE CONTIENE info de los pedidos seleccionados
+<PedidosSeleccionadosTerminarComprasLayout>:
+    cols:3
+    size_hint_y: None
+    height:self.minimum_height
+    spacing: 0, 15
+    padding: 16, 10
+    row_default_height: '40dp'
+
+    canvas.before:
+        Color:
+            rgba: (.1,.1,.1,1)
+        Line:
+            width: 3
+            rectangle: self.x-5,self.y-5,self.width+10, self.height+10
+    Label:
+        text:"[b]Producto[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+        size_hint_x: 1.5
+
+    Label:
+        text:"[b]Precio[/b]"
+        markup: True
+        multiline: True
+        halign: 'center'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+
+
+    Label:
+        text:"[b]Precio Real[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+
+
+
+
+#LAYOUT QUE CONTIENE info de los pedidos no seleccionados
+
+<PedidosNoSeleccionadosTerminarComprasLayout>:
+    cols:2
+    size_hint_y: None
+    height:self.minimum_height
+    spacing: 0, 15
+    padding: 16, 10
+    row_default_height: '40dp'
+
+    canvas.before:
+        Color:
+            rgba: (.1,.1,.1,1)
+        Line:
+            width: 3
+            rectangle: self.x-5,self.y-5,self.width+10, self.height+10
+    Label:
+        text:"[b]Producto[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+        size_hint_x: 2
+
+    Label:
+        text:"[b]Precio[/b]"
+        markup: True
+        halign: 'center'
+        valign: 'top'
+        font_size: (root.width**2 + root.height**2) / 10**4
+        color: 37/255,65/255,178/255,1
+        text_size: self.size
+
+#LAYOUT QUE CONTIRNE EL BOTON PARA TERMINAR COBROS EN MENU DE COBROS
+<CobrosTerminarSolicitanteLayout>:
+    canvas.before:
+        Color:
+            rgba: (0.9,0.9,0.9,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+#LABEL CON NOMBRE CATEGORÍA
+<TiendaGrupoLabel>:
+    text:"[b]Test[/b]"
+    markup: True
+    halign: 'left'
+    valign: 'bottom'
+    font_size: (root.width**2 + root.height**2) / 10**4
+    pos_hint: {"x":0.1, "top":0.85}
+    size_hint: 0.9, 0.4
+    color: 37/255,65/255,178/255,1
+    text_size: self.size
+
+#LAYOUT PARA CONTENER GRUPOS DE TIENDA POR CATEGORIA EN EL MENU DE CREACION DE OFERTA
+<TiendaGrupoLayout>:
+    valign: 'top'
+    pos_hint: {"x":0.08, "top":1}
+    size_hint: 0.85, 0.8
+    cols:3
+    size_hint_y: None
+    height:self.minimum_height
+    row_default_height: '60dp'
+    row_force_default: True
+    spacing: 0, 0
+    padding: 0, 0
+    text_size: self.size
+
+
+
+
+#layout para contener a una tienda y su checkbox en el menu de tiendas
+<TiendaLayout>:
+    cols:2
+    check:check
+    name:name
+
+
+    CheckBox:
+        id: check
+        allow_stretch: True
+        size_hint_x:0.5
+        text:"6"
+        color: 0,0,0,1
+        background_color: 56/255,163/255,165/255,1
+    Label:
+        id:name
+        text:"[b]Ahumada[/b]"
+        markup: True
+        halign: 'left'
+        valign: 'center'
+        font_size: (root.width**2 + root.height**2) / 6.3**4
+        color: 0,0,0,1
+        text_size: self.size
+
+
+
+<CustomCheck@CheckBox>:
+    _checkbox_state_image:
+        self.background_checkbox_down \
+        if self.active else self.background_checkbox_normal
+    _checkbox_disabled_image:
+        self.background_checkbox_disabled_down \
+        if self.active else self.background_checkbox_disabled_normal
+    _radio_state_image:
+        self.background_radio_down \
+        if self.active else self.background_radio_normal
+    _radio_disabled_image:
+        self.background_radio_disabled_down \
+        if self.active else self.background_radio_disabled_normal
+    _checkbox_image:
+        self._checkbox_disabled_image \
+        if self.disabled else self._checkbox_state_image
+    _radio_image:
+        self._radio_disabled_image \
+        if self.disabled else self._radio_state_image
+    canvas:
+        Color:
+            rgba: self.color
+        Rectangle:
+            source: self._radio_image if self.group else self._checkbox_image
+            size: sp(64), sp(64)
+            pos: int(self.center_x - sp(16)), int(self.center_y - sp(16))
+
+
+#Popup para elegir cantidad deseada de un producto seleccionado
+<ProductoPopup>:
+    cantidad:cantidad
+    precio:precio
+    title: "Cebolla Malla"
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        TextInput:
+            id: cantidad
+            readonly: True
+            text:"1"
+            font_size: (root.width**2 + root.height**2) / 10**4
+            multiline: False
+            pos_hint: {"x": 0.4 , "y":0.65}
+            size_hint: 0.2, 0.16
+            halign: 'center'
+        Label:
+            id: precio
+            readonly: True
+            text:"$500"
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: False
+            pos_hint: {"x": 0 , "y":0.45}
+            size_hint: 1, 0.2
+            halign: 'center'
+        PlusBut:
+            pos_hint: {"x":0.65, "y":0.75}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.add()
+        MinusBut:
+            pos_hint: {"x":0.65, "y":0.55}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.minus()
+        ConfirmBut:
+            pos_hint: {"x":0.58, "y":0.22}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.add_to_cart()
+        DeclineBut:
+            pos_hint: {"x":0.22, "y":0.22}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.dismiss()
+
+#Popup para mostrar productos elegidos durante la seleccion de productos
+<CarroPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    total:total
+    pedidos_grid:pedidos_grid
+
+    BoxLayout:
+        pos_hint: {"top":0.99}
+        size_hint: 1, 0.75
+        orientation: 'vertical'
+        padding: 10, 10
+        row_default_height: '150dp'
+        row_force_default: True
+        spacing: 10, 100
+        FloatLayout:
+            pos_hint: {"x":0, "top":1}
+            size_hint: 1, 0.2
+            text_size: self.size
+            canvas.before:
+                Color:
+                    rgba: (0.9,0.9,0.9,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                id:total
+                text:"[b]Total: $1000[/b]"
+                markup: True
+                halign: 'left'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 12**4
+                pos_hint: {"x":0.05, "y":0}
+                size_hint: 1, 1
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+
+        ScrollView:
+            pos_hint: {"y":0}
+
+            GridLayout:
+                cols:1
+                size_hint_y: None
+                height:self.minimum_height
+                spacing: 0, 30
+                padding: 16, 30
+                GridLayout:
+                    id: pedidos_grid
+                    spacing: 3, 3
+                    cols:1
+                    size_hint_y: None
+                    height:self.minimum_height
+                    row_default_height: '75dp'
+                    canvas.before:
+                        Color:
+                            rgba: (0.1,0.1,0.1,1)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                        Color:
+                            rgba: (.1,.1,.1,1)
+                        Line:
+                            width: 3
+                            rectangle: self.x,self.y,self.width, self.height
+
+#Popup para advertir sobre quiebre de limites
+<TerminarOfertaWarningPopup>:
+    lista:lista
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"La lista no cumple con\nlas siguientes restricciones:"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.8}
+            size_hint: 1, 0.2
+            halign: 'center'
+        Label:
+            id: lista
+            text:"->Monto max\n->Monto max\n->Monto max\n"
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.5}
+            size_hint: 1, 0.2
+            halign: 'center'
+        Label:
+            text:"SmartList seleccionará sólo los\nproductos más prioritarios."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.3}
+            size_hint: 1, 0.2
+            halign: 'center'
+
+        ConfirmBut:
+            pos_hint: {"x":0.58, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.end_oferta()
+        DeclineBut:
+            pos_hint: {"x":0.22, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.dismiss()
+
+
+#Popup para advertir que se eliminaran los cobros
+<TerminarCobroWarningPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"¿Fueron los productos \n correctamente cobrados?"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.8}
+            size_hint: 1, 0.2
+            halign: 'center'
+
+
+        ConfirmBut:
+            pos_hint: {"x":0.58, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.end_cobros_confirmed()
+        DeclineBut:
+            pos_hint: {"x":0.22, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.dismiss()
+
+
+#Popup para confirmar que no se agrego nada de la lista de espera
+<AddWaitingListFailedPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+
+
+    FloatLayout:
+
+        Label:
+            text:"[b]Fallo[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"No se pudo agregar\nningún producto de la\nlista de espara debido\na las restricciones del comprador."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            markup: True
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.2}
+            size_hint: 1, 0.6
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+#Popup para confirmar que se compraron los productos de una tienda
+<TerminarCompraSucessPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    on_dismiss: root.go_to_cobros()
+
+    FloatLayout:
+
+        Label:
+            text:"[b]¡Listo![/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Para recordar cuánto\ndebe cobrar recuerde\nusar el menú de [b]Cobros[/b]."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            markup: True
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.2}
+            size_hint: 1, 0.6
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+#Popup para confirmar que se termino un cobro
+<TerminarCobroSucessPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    on_dismiss:
+        root.go_to_productos()
+
+    FloatLayout:
+        Label:
+            text:"[b]¡Listo![/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Compra terminada."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            markup: True
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.2}
+            size_hint: 1, 0.6
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+
+
+
+
+
+#Popup para señalar que se inicio mal la sesion
+<LoginFailedPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Datos Inválidos[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Usuario o contraseña\nincorrectos."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.3}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+#Popup para señalar que no existen grupos con ese codigo
+<GroupNotFoundPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Datos Inválidos[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"No existe un grupo\ncon este código."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.3}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+#Popup para señalar que el nombre de grupo es inválido
+<GroupNameFailedPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Datos Inválidos[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"El nombre de grupo\ndebe ser entre 4\ny 19 caractéres"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.3}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+
+#Popup para advertir que se cerrara la sesion
+<CerrarSesionWarningPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Está a punto de\ncerrar su sesión[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"¿Continuar?"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.45}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+            text_size: self.size
+
+        ConfirmBut:
+            pos_hint: {"x":0.58, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.cerrar_sesion()
+        DeclineBut:
+            pos_hint: {"x":0.22, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.dismiss()
+
+#Popup para advertir que hay pedidos fallidos
+<TerminarCompraPedidoFallidoGeneralPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]ADVERTENCIA[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Aún no se han comprado\ntodos los productos de\nla lista junto a sus\ncantidades originales.\n\n¿Desea continuar de\ntodas formas?"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.2}
+            size_hint: 1, 0.6
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+        ConfirmBut:
+            pos_hint: {"x":0.58, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.check_waiting()
+        DeclineBut:
+            pos_hint: {"x":0.22, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.dismiss()
+
+#Popup para indicar que los datos de nuevo usuario de nombre y fecha fueron ingresados incorrectamente
+<NewUserIncorrectDateOrName>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Datos ingresados\ninválidos[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"El nombre de usuario debe\nser entre 4 y 19 caractéres."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.6}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+        Label:
+            text:"Debe ingresar su fecha\ncon números enteros."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.4}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+#Popup para indicar que los datos de nuevo usuario de clave fueron ingresados incorrectamente
+<NewUserIncorrectPassword>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Contraseña inválida[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"La contraseña de usuario\ndebe contener entre\n8 y 30caractéres."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.6}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+#Popup para indicar que no se eligio ninguna tienda al realizar anuncio
+<NewAnuncioNoTiendasPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Datos ingresados\ninválidos[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Debe elegir al menos \nuna tienda (máximo 4)."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.6}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+#Popup para indicar que LAS RESTRICCIONES ESTAN INAVALIDAS
+<NewAnuncioInvalidResPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Datos ingresados\ninválidos[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"El presupuesto debe ser \nsuperior a $100."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.6}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+        Label:
+            text:"Peso máximo mayor a \n0.1 kg."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.4}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+        Label:
+            text:"Cantidad máxima mayor a 0."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.2}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+#Popup para indicar que el anuncio se creo exitosamente
+<NewAnuncioSucessPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    on_dismiss:
+        root.back_to_menu()
+    FloatLayout:
+        Label:
+            text:"[b]¡Listo![/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Su grupo acaba de ser\nnotificado."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.6}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+        Label:
+            text:"Recuerde cerrar el anuncio\ncuando llegue a la tienda\npara no recibir encargos\nen la mitad de sus\ncompras."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.2}
+            size_hint: 1, 0.4
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+<NewEncargoNoTiendasPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Datos ingresados\ninválidos[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Debe elegir al menos \nuna tienda."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.6}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+<NewEncargoNoProductosPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Carro Vacío[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Debe elegir al menos \nun producto."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.6}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+#Popup para indicar que el encargo se creo
+<NewEncargoSucessPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    on_dismiss:
+        root.back_to_menu()
+    FloatLayout:
+        Label:
+            text:"[b]¡Listo![/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"El comprador acaba de\nser notificado."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.6}
+            size_hint: 1, 0.2
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+        Label:
+            text:"Puede revisar el estado\nde sus pedidos en\nla sección [b]Mis Pedidos[/b]."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            markup: True
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.2}
+            size_hint: 1, 0.4
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+
+#Popup para indicar que la oferta se termino
+<EndOfertaSucessPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    on_dismiss:
+        root.back_to_menu()
+    FloatLayout:
+        Label:
+            text:"[b]¡Listo![/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Los encargos de su grupo\nfueron agregados a la\nlista [b]Productos por Comprar[/b]\nen la seccion [b]Pedidos[/b]."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            markup: True
+            pos_hint: {"x": 0.15 , "y":0.4}
+            size_hint: 1, 0.4
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+        Label:
+            text:"Asegúrese de anotar en\nesta cuando cada pedido\nhaya sido comprado."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.15 , "y":0.05}
+            size_hint: 1, 0.4
+            halign: 'left'
+            valign: 'top'
+            text_size: self.size
+
+#Popup para indicar que la oferta se termino
+<EndOfertaSucessNoPedidosPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    on_dismiss:
+        root.back_to_menu()
+    FloatLayout:
+        Label:
+            text:"[b]Anuncio terminado[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"El anuncio fue cerrado sin realizar ningún pedido."
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            markup: True
+            pos_hint: {"x": 0.15 , "y":0.4}
+            size_hint: 0.7, 0.4
+            halign: 'justify'
+            valign: 'top'
+            text_size: self.size
+
+
+
+
+#Popup para advertir que se eliminaran los cobros
+<AddWaitingPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Anuncio terminado[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.85}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Label:
+            text:"Existen pedidos en la lista\nde espera que pueden\nreeemplazar a los recién\ncancelados. ¿Desea recibir\nestos pedidos?"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.5}
+            size_hint: 1, 0.2
+            halign: 'center'
+
+
+        ConfirmBut:
+            pos_hint: {"x":0.58, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.calcular_pedidos_espera()
+        DeclineBut:
+            pos_hint: {"x":0.22, "y":0.1}
+            size_hint: 0.2, 0.2
+            on_release:
+                root.skip_espera()
+
+#Popup para mostrar pedido a punto de eliminar
+<TerminarCompraPedidoFallidoPopup>:
+    title: "Compra fallida"
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    pedido_grid:pedido_grid
+    solicitante:solicitante
+    nombre:nombre
+    peso:peso
+    precio:precio
+
+    FloatLayout:
+
+        GridLayout:
+            id:pedido_grid
+            cols:2
+            size_hint_y: None
+            height:self.minimum_height
+            row_default_height: '30dp'
+            spacing: 0, 30
+            padding: 16, 0
+            pos_hint: {"x": 0.05 , "top":0.95}
+            size_hint: 0.9, 0.5
+
+            canvas.before:
+                Color:
+                    rgba: (.1,.1,.1,1)
+                Line:
+                    width: 3
+                    rectangle: self.x-5,self.y-5,self.width+10, self.height+10
+
+            Label:
+                text:"[b]Solicitante[/b]"
+                markup: True
+                halign: 'center'
+                valign: 'top'
+                font_size: (root.width**2 + root.height**2) / 13**4
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+
+            Label:
+                id:solicitante
+                text:"Roberto"
+                markup: True
+                halign: 'center'
+                valign: 'top'
+                font_size: (root.width**2 + root.height**2) / 13**4
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+            Label:
+                text:"[b]Producto[/b]"
+                markup: True
+                halign: 'center'
+                valign: 'top'
+                font_size: (root.width**2 + root.height**2) / 13**4
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+
+            Label:
+                id:nombre
+                text:"1kg Palta"
+                markup: True
+                halign: 'center'
+                valign: 'top'
+                font_size: (root.width**2 + root.height**2) / 13**4
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+            Label:
+                text:"[b]Peso[/b]"
+                markup: True
+                halign: 'center'
+                valign: 'top'
+                font_size: (root.width**2 + root.height**2) / 13**4
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+
+            Label:
+                id:peso
+                text:"1.0kg"
+                markup: True
+                halign: 'center'
+                valign: 'top'
+                font_size: (root.width**2 + root.height**2) / 13**4
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+            Label:
+                text:"[b]Precio[/b]"
+                markup: True
+                halign: 'center'
+                valign: 'top'
+                font_size: (root.width**2 + root.height**2) / 13**4
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+
+            Label:
+                id:precio
+                text:"6000"
+                markup: True
+                halign: 'center'
+                valign: 'top'
+                font_size: (root.width**2 + root.height**2) / 13**4
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+        Label:
+            pos_hint: {"x": 0.05 , "top":0.4}
+            size_hint: 0.9, 0.1
+            text:"[b]¿Por qué no pudo realizar este pedido?[/b]"
+            markup: True
+            halign: 'center'
+            valign: 'top'
+            font_size: (root.width**2 + root.height**2) / 13**4
+            color: 1,0,1,1
+            text_size: self.size
+        Button:
+            pos_hint: {"x": 0.1 , "top":0.3}
+            size_hint: 0.8, 0.08
+            text: "[font=Arial]Producto Agotado[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 13**4
+            background_color: 0.2,1,0.1,1
+            on_release:
+                root.next()
+
+        Button:
+            pos_hint: {"x": 0.1 , "top":0.2}
+            size_hint: 0.8, 0.08
+            text: "[font=Arial]Producto Muy caro[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 13**4
+            background_color: 0.2,1,0.1,1
+            on_release:
+                root.next()
+
+        Button:
+            pos_hint: {"x": 0.1 , "top":0.1}
+            size_hint: 0.8, 0.08
+            text: "[font=Arial]Otra razón[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 13**4
+            background_color: 0.2,1,0.1,1
+            on_release:
+                root.next()
+
+#Popup de ayuda para indicar que significan los iconos en mis pedidos
+<MisPedidosHelpPopup>:
+    title: ""
+    separator_height: 0
+    size_hint: .8,.6
+    background_color: 1,1,1,1
+    FloatLayout:
+        Label:
+            text:"[b]Ayuda[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 11**4
+            multiline: True
+            pos_hint: {"x": 0 , "y":0.9}
+            size_hint: 1, 0.2
+            halign: 'center'
+            valign: 'top'
+        Image:
+            source: 'icons/run.png'
+            allow_stretch:True
+            pos_hint: {"x": 0.1 , "y":0.75}
+            size_hint: 0.15, 0.15
+
+        Label:
+            text:"A comprar"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.28 , "y":0.8}
+            size_hint: 0.7, 0.2
+            halign: 'left'
+            text_size: self.size
+        Image:
+            source: 'icons/hourglass.png'
+            allow_stretch:True
+            pos_hint: {"x": 0.1 , "y":0.55}
+            size_hint: 0.15, 0.15
+
+        Label:
+            text:"En lista de espera"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.28 , "y":0.6}
+            size_hint: 0.7, 0.2
+            halign: 'left'
+            text_size: self.size
+
+        Image:
+            source: 'icons/checked.png'
+            allow_stretch:True
+            pos_hint: {"x": 0.1 , "y":0.35}
+            size_hint: 0.15, 0.15
+        Label:
+            text:"Comprado"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.28 , "y":0.4}
+            size_hint: 0.7, 0.2
+            halign: 'left'
+            text_size: self.size
+        Image:
+            source: 'icons/delete.png'
+            allow_stretch:True
+            pos_hint: {"x": 0.1 , "y":0.15}
+            size_hint: 0.15, 0.15
+        Label:
+            text:"Eliminado"
+            font_size: (root.width**2 + root.height**2) / 12**4
+            multiline: True
+            pos_hint: {"x": 0.28 , "y":0.2}
+            size_hint: 0.7, 0.2
+            halign: 'left'
+            text_size: self.size

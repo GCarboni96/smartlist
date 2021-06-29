@@ -1,0 +1,20 @@
+<TestSuccessWindow>:
+    name: "testsuccess"
+    FloatLayout:
+
+        canvas.before:
+
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+        Label:
+            text:"[font=Arial]Success[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 12**4
+            pos_hint: {"x":0.5, "top":0.9}
+            size_hint: 0, 0
+            color: 1,0,1,1

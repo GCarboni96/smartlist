@@ -1,0 +1,77 @@
+<Encargo1Window>:
+    name: "encargo1"
+    tiendas_grid:tiendas_grid
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba:(241/255,228/255,232/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            pos_hint: {"top":0.9}
+            size_hint: 1, 0.75
+            orientation: 'vertical'
+            padding: 10, 10
+            row_default_height: '400dp'
+            row_force_default: True
+            spacing: 10, 100
+
+            GoBackBut:
+                size_hint: 0.1, 0.1
+                on_release:
+                    app.root.current = "menucompras"
+                    root.manager.transition.direction = "right"
+
+
+            Label:
+                text:"[b]Tiendas[/b]"
+                markup: True
+                halign: 'center'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 13**4
+                pos_hint: {"x":0, "top":1}
+                size_hint: 1, 0.1
+                color: 37/255,65/255,178/255,1
+                text_size: self.size
+            Label:
+                text:"[font=Arial]Seleccione de que tienda(s)\nquiere encargar sus productos:[/font]"
+                markup: True
+                halign: 'center'
+                valign: 'center'
+                font_size: (root.width**2 + root.height**2) / 15**4
+                pos_hint: {"x":0, "top":0.94}
+                size_hint: 1, 0.1
+                color: 0,0,0,1
+                text_size: self.size
+            ScrollView:
+                pos_hint: {"y":0.65}
+
+                GridLayout:
+                    id:tiendas_grid
+                    cols:2
+                    size_hint_y: None
+                    height:self.minimum_height
+                    row_default_height: '100dp'
+                    row_default: '100dp'
+                    width: self.parent.width*0.8
+                    spacing: 0, 4
+                    padding: 100, 12
+
+
+        GridLayout:
+            cols:1
+            pos_hint: {"top":0.15}
+            size_hint: 1, 0.15
+            AnchorLayout:
+                Button:
+                    size_hint: 0.4, 0.3
+                    text: "[font=Arial]Siguiente[/font]"
+                    markup: True
+                    font_size: (root.width**2 + root.height**2) / 15**4
+                    background_color: 0.2,1,0.1,1
+                    on_release:
+                        root.manager.transition.direction = "left"
+                        root.gather_go()

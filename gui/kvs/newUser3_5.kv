@@ -1,0 +1,50 @@
+<NewUser3_5Window>:
+    name: "newuser3_5"
+    newuser_psw: newuser_psw
+
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba:(241/255,228/255,232/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GoBackBut:
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+
+
+        Label:
+            text:"[font=Arial]Ingrese su\ncontraseña de usuario[/font]"
+            markup: True
+            multiline: True
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.5, "top":0.6}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+        TextInput:
+            id: newuser_psw
+            font_size: (root.width**2 + root.height**2) / 13**4
+            multiline: False
+            pos_hint: {"x": 0.2 , "top":0.5}
+            size_hint: 0.6, 0.08
+            password: True
+
+
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.1}
+            size_hint: 0.4, 0.05
+            text: "[font=Arial]Ok[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            background_color: 81/255,255/255,85/255,1
+            border: (16,16,16,16)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.submit_new_user_data()

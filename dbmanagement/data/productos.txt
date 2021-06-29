@@ -1,0 +1,8 @@
+;Zanahoria Bolsa 1Kg;;1;690;2;1
+;Cebolla Malla;;1;790;2;1
+;Palta Hass Malla;;0.7;2790;2;1 
+;Apio Mata;;0.5;890;2;1
+;Nescafe Café Instantaneo Tradicion tarro;;0.4;7490;2;0.5
+;Sundown Vitamina D3 400 IU;;0.4;9899;9;1
+;Manare Aceite de Coco Organico;;0.5;9499;9;1
+;Gatorade Sacor Cool Blue;https://d1tjllbjmslitt.cloudfront.net/spree/products/19378/thumbnail/8940296.jpg?1538408382;0.5;1299;9;0

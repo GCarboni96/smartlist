@@ -1,0 +1,7 @@
+CREATE TABLE Usuarios_X_Factores (
+    id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1, NO CACHE ),
+    usuarioid int NOT NULL,
+    factorid int NOT NULL,
+    CONSTRAINT FK_Usuario_Condicion FOREIGN KEY (usuarioid) REFERENCES USUARIOS(id),
+    CONSTRAINT FK_Usuario_Condicion_2 FOREIGN KEY (factorid) REFERENCES FACTORES(id)
+);

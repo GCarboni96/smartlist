@@ -1,0 +1,59 @@
+<NewUserCreate1Window>:
+    name: "newusercreate1"
+    group_name:group_name
+
+
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba:(241/255,228/255,232/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GoBackBut:
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+
+
+        Label:
+            text:"[font=Arial]Ingrese el \n nombre de su \n nuevo grupo:[/font]"
+            markup: True
+            multiline: True
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.5, "top":0.7}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+        TextInput:
+            id: group_name
+            font_size: (root.width**2 + root.height**2) / 14**4
+            multiline: False
+            pos_hint: {"x": 0.2 , "top":0.55}
+            size_hint: 0.6, 0.08
+
+        Label:
+            text:"[font=Arial]Puede cambiar este nombre después en \n la sección Opciones.[/font]"
+            markup: True
+            multiline: True
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 16**4
+            pos_hint: {"x":0.5, "top":0.4}
+            size_hint: 0, 0
+            color: 37/255,65/255,178/255,1
+
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.1}
+            size_hint: 0.4, 0.05
+            text: "[font=Arial]Crear grupo[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            background_color: 100/255,187/255,100/255,1
+            border: (16,16,16,16)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.submit_group()

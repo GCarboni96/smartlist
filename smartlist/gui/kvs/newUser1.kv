@@ -1,0 +1,46 @@
+<NewUser1Window>:
+    name: "newuser1"
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba:(56/255,163/255,165/255,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GoBackBut:
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+
+        Label:
+            text:"[b]SmartList[/b]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 12**4
+            pos_hint: {"x":0.5, "top":0.9}
+            size_hint: 0, 0
+            color: 1,1,1,1
+
+        Label:
+            text:"[font=Arial]¡Bienvenido a [b]SmartList[/b]!\nLa app ideal para coordinar \n compras colaborativas con tus \n vecinos y familia.[/font]"
+            markup: True
+            multiline: True
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 14**4
+            pos_hint: {"x":0.5, "top":0.65}
+            size_hint: 0, 0
+            color: 1,1,1,1
+
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.4}
+            size_hint: 0.4, 0.05
+            text: "[font=Arial]Ok[/font]"
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 15**4
+            background_color:  81/255,255/255,85/255,1
+            border: (16,16,16,16)
+            on_release:
+                app.root.current = "newuser2"
+                root.manager.transition.direction = "left"
